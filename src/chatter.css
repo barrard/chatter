@@ -1,0 +1,75 @@
+#_ChatUsernameInputContainer{
+	align-content: center;
+	position: absolute;
+	top: 25%;
+	padding: 10px;
+}
+
+#_ChatUserNameInput{
+	height: 2em;
+	margin: 10px;
+}
+
+#_ChatUserNameInput::-webkit-input-placeholder{
+	color: black;
+	text-shadow: 0px 0px 10px rgba(0, 0, 100, 0.5);
+	text-align: center;
+}
+
+/*#_ChatUserNameInput::-ms-input-placeholder{
+	color: black;
+	text-shadow: 0px 0px 10px rgba(0, 0, 100, 0.1);
+	text-align: center;
+}
+#_ChatUserNameInput::-moz-placeholder{
+	color: black;
+	text-shadow: 0px 0px 10px rgba(0, 0, 100, 0.1);
+	text-align: center;
+}*/
+
+#_ChatLog{
+	/*overflow-x: hidden;*/
+	overflow-y: scroll;
+	
+}
+#_ChatLog::-webkit-scrollbar{
+	width:5px;
+}
+#_ChatLog::-webkit-scrollbar-track{
+	box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+
+	border-radius: 10px;
+}
+#_ChatLog::-webkit-scrollbar-thumb{
+	background: rgba(255,0,0,0.8); 
+	border-radius: 10px;
+}
+#_ChatLog:hover::-webkit-scrollbar-thumb {
+	background: rgba(255,0,0,0.4); 
+}
+/*#_ChatUsernameInputContainer > *{
+	margin:10px;
+
+}*/
+
+._ChatSender{
+	color: green;
+	text-decoration: underline;
+}
+
+
+._ChatWindowHeader{
+	display: block;
+	text-align: center;
+}
+
+._ChatText{
+	padding:5px 15px 5px 15px;
+	display: block;
+	text-align: center;
+}
+
+._ChatTimestamp{
+	text-align: right;
+	font-size: 9px;
+}
