@@ -33,7 +33,8 @@ function createChatLogo(chatBox){
 				tbs.left='0px';
 				tbs.right='0px';
 				tbs.border='3px solid green';
-				tbs.background='linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet)';
+				// tbs.background='linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet)';
+				tbs.background='linear-gradient(to right, red, orange, yellow, green)';
 				tbs.borderRadius='50%';
 				tbs.marginTop='15px';
 				tbs.marginBottom='15px';	
