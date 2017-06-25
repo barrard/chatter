@@ -11,32 +11,43 @@ function evalScript(parent){
 	}
 }
 
+var Data ={
+	username:'',
+	apikey:''
+}
+
+
 
 var app = document.getElementById('app')
-GET('/checkIfLoggedin', function(data){
-	var data = JSON.parse(data)
-	console.log('checkIfLoggedIn')
-	console.log(data.loggedIn)
-	console.log(data)
-	if(!data.loggedIn){
-		//not yet loggedIn so load up the login Form
-		var template = document.getElementById('login-template').innerHTML
-		app.innerHTML=template
-		evalScript(app)
-	}else if(data.loggedIn===true){
-		//load the admin page
-		var template = document.getElementById('admin-template').innerHTML
-		app.innerHTML=template
-		evalScript(app)
+CheckIfLoggedIn()
+function CheckIfLoggedIn(){
+	GET('/checkIfLoggedin', function(data){
+		var data = JSON.parse(data)
+		console.log('checkIfLoggedIn')
+		console.log(data.loggedIn)
+		console.log(data)
+		if(!data.loggedIn){
+			//not yet loggedIn so load up the login Form
+			var template = document.getElementById('login-template').innerHTML
+			app.innerHTML=template
+			evalScript(app)
+		}else if(data.loggedIn===true){
+			//load the admin page
+			var template = document.getElementById('admin-template').innerHTML
+			app.innerHTML=template
 
-		$('apiKey').innerHTML=data.apikey
-		$('username').innerHTML=data.username
+			Data.apikey=data.apikey
+			Data.username=data.username
+
+			evalScript(app)
 
 
-	}
-	
-})
 
+		}
+		
+	})
+
+}
 
 
 

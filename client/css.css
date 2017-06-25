@@ -15,6 +15,10 @@ input[type="text"]::-webkit-input-placeholder{
 	text-align: center;
 	font-family: 'Coming Soon';
 }
+input[type="password"]::-webkit-input-placeholder{
+	text-align: center;
+	font-family: 'Coming Soon';
+}
 input[type="text"]{
 	text-align: center;
 	font-family: 'Coming Soon';
@@ -164,4 +168,7 @@ ul{
 
 .block{
 	display: block;
+}
+.green{
+	color:green;
 }

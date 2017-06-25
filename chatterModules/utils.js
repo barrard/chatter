@@ -1,4 +1,57 @@
+
 var $Util = (function(){
+'use strict'
+	    var dgcn = function(el) {
+	        return document.querySelectorAll(el)
+	    }
+	    var dgid = function(el) {
+	        return document.querySelector(el)
+	    }
+
+	    function query(dom, el){
+	    	return dom.querySelector(el)
+	    }
+	    var getShadowEl = function(el){
+	    	console.log(arguments.length)
+	    	console.log('we run this '+arguments.length+' times')
+	    	var shadowRoot = getChatterRoot()
+	    	var first = query(shadowRoot, arguments[0])
+	    	if(arguments.length>1){
+	    		console.log('greater than 1')
+	    		var count = 1
+	    		while(count<arguments.length){
+	    			console.log(arguments[count])
+	    			first = query(first, arguments[count])
+	    			count++
+	    			console.log('count is '+count)
+	    			if(count==arguments.length){
+	    				console.log('is this really worth is?')
+	    				console.log(first)
+	    				return first
+	    			}
+	    		}
+
+	    	}else{
+	    		console.log('just one thing ran')
+	    		return(first)
+	    	}
+
+
+	    }
+	    function queryShadowDom(el){
+	    	var root = getChatterRoot()
+	    	return root.querySelector(el)
+	    }
+	    function getChatterRoot(){
+	    	return document.querySelector('._cornerChatBox').shadowRoot
+		}
+	    var dce = function(el) {
+	        return document.createElement(el)
+	    }
+
+
+
+
 	function geid(el){
 		return document.getElementById(el)
 	}
@@ -49,10 +102,14 @@ return {
 	dgcn: gecn,
 	dce:dce,
 	request:request,
-	serialize:serialize
+	serialize:serialize,
+	queryShadowDom:queryShadowDom
 }
 
 
 })()
 
 $Util.geid('one')
+
+
+

@@ -3,7 +3,7 @@ var logger = require('tracer').colorConsole({
                     format : "{{timestamp.green}} <{{title.yellow}}> {{message.cyan}} (in {{file.red}}:{{line}})",
                     dateformat : "HH:MM:ss.L"
                 })
-var url = 'mongodb://192.168.0.87:27017/chatter';
+var url = 'mongodb://192.168.0.93:27017/chatter';
 var MongoClient = require('mongodb').MongoClient
 var util = require('./util')
 var Util = require('util')
