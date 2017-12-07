@@ -4,8 +4,8 @@ var Chatter = (function(module){
 	var socket;
 
 	function initSocket(){
-		 // socket = io.connect('http://192.168.0.93:8081');
-				socket = io.connect('http://66.8.168.178');
+		 socket = io.connect('http://192.168.0.93:8081');
+				// socket = io.connect('http://66.8.168.178');
 				socket.on('connection', function(msg){
 					if(Chatter.getUsername() !== undefined){
 						socket.emit('newChatter', {username:Chatter.getUsername(), socketId:socket.id})

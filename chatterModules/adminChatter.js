@@ -1,5 +1,6 @@
 //admin
 var Chatter = (function(module){
+	'use strict'
 	console.log('adminChatter is here')
 	window.onload= function(){
 		console.log('loaded')
