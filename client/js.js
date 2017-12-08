@@ -21,7 +21,7 @@ var Data ={
 var app = document.getElementById('app')
 CheckIfLoggedIn()
 function CheckIfLoggedIn(){
-	GET('/checkIfLoggedin', function(data){
+	GET('/chatter/checkIfLoggedin', function(data){
 		var data = JSON.parse(data)
 		console.log('checkIfLoggedIn')
 		console.log(data.loggedIn)
