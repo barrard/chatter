@@ -572,9 +572,12 @@ var Chatter = function (module) {
 
 	var queryShadowDom = Chatter.queryShadowDom;
 	var socket;
-
+	var HOST = location.host;
+	var PROTOCOL = location.protocol;
 	function initSocket() {
-		socket = io.connect('http://192.168.0.93:8081');
+		socket = io(PROTOCOL + '//' + HOST + '/chatter/');
+
+		// socket = io.connect('http://192.168.0.93:8081');
 		// socket = io.connect('http://66.8.168.178');
 		socket.on('connection', function (msg) {
 			if (Chatter.getUsername() !== undefined) {
