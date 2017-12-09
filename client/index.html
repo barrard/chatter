@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
-	<link rel="stylesheet" href="chatter/css.css">
+	<link rel="stylesheet" href="/css.css">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rock+Salt|Roboto|Kumar+One|Coming+Soon">
 </head>
 <body>
@@ -159,7 +159,7 @@
 								password: password
 							}
 							console.log('all verified!  register this user')
-							POST('/chatter/register', data, function(resp){
+							POST('/register', data, function(resp){
 								var resp = JSON.parse(resp)
 								console.log(resp)
 								if(resp.err){
@@ -205,7 +205,7 @@
 								password: password
 							}
 							console.log('all verified!  login this user')
-							POST('/chatter/login', data, function(resp){
+							POST('/login', data, function(resp){
 								var resp = JSON.parse(resp)
 								console.log(resp)
 								var loginErr = document.getElementById('loginError')
@@ -445,7 +445,7 @@
 		var signOutBtn = $('signOutBtn')
 		signOutBtn.addEventListener('click', signOut, true)
 		function signOut(){
-			GET('/chatter/signOut', function(){
+			GET('/signOut', function(){
 
 			})
 		}
@@ -465,7 +465,7 @@
 			respObj.apikey = apikey
 
 			respObj = JSON.stringify(respObj)
-			POST('/chatter/addDomain', respObj, function(resp){
+			POST('/addDomain', respObj, function(resp){
 				var resp = JSON.parse(resp)
 				var dB = $('addDomainBtn')
 				console.log(resp)
@@ -524,9 +524,9 @@
 
 	</script>
 
-	<script src='chatter/js.js'></script>
+	<script src='/js.js'></script>
 	<!-- <script src='http://192.168.0.93:8081/chatBuild/y3R31wKEU7cIlRQplE1I'></script> -->
-	<script src='https://draggon.us/chatter/chatBuild/NguF38ZxLFgnuUcDyhvB'></script>
+	<script src='https://draggon.us/chatBuild/NguF38ZxLFgnuUcDyhvB'></script>
 	<!-- <script src='chatter/chatBuild.js'></script> -->
 	<!-- <script src='/min.chat.js'></script> -->
 

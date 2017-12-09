@@ -149,7 +149,7 @@
 								password: password
 							}
 							console.log('all verified!  register this user')
-							POST('/chatter/register', data, function(resp){
+							POST('/register', data, function(resp){
 								var resp = JSON.parse(resp)
 								console.log(resp)
 								if(resp.err){
@@ -195,7 +195,7 @@
 								password: password
 							}
 							console.log('all verified!  login this user')
-							POST('/chatter/login', data, function(resp){
+							POST('/login', data, function(resp){
 								var resp = JSON.parse(resp)
 								console.log(resp)
 								var loginErr = document.getElementById('loginError')
