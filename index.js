@@ -132,7 +132,7 @@ app.get('/signOut', function(req, res) {
 	res.send(respObj)
 })
 
-app.post('/addDomain', function(req, res) {
+app.post('/chatter/addDomain', function(req, res) {
 	// var respObj={};
 
 	var body = ''
