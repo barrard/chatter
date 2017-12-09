@@ -108,6 +108,7 @@ app.get('/chatBuild/:api', function(req, res) {
 		apikey: req.params.api
 	}, 'registeredDomains', function(items) {
 		if (items.length === 0) {
+			logger.log('length === 0 send the adminSetup??')
 			fileRequested = '/adminSetup.js';
 		} else {
 			logger.log(items)
