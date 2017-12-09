@@ -270,32 +270,6 @@ return module
 
  })(Chatter || {})
 
-//Data
-var Chatter = (function(module){
-	'use strict'
-	var dataObj = {}
-
-
-	function setUsername(username){
-		dataObj.username = username
-		
-	}
-	function getUsername(){
-		return dataObj.username
-	}
-
-
-
-	module.setUsername = setUsername
-	module.getUsername = getUsername
-
-
-return module
-
-
-})(Chatter || {})
-
-
 
 var $Util = (function(){
 'use strict'
@@ -410,6 +384,32 @@ return {
 $Util.geid('one')
 
 
+
+
+//Data
+var Chatter = (function(module){
+	'use strict'
+	var dataObj = {}
+
+
+	function setUsername(username){
+		dataObj.username = username
+		
+	}
+	function getUsername(){
+		return dataObj.username
+	}
+
+
+
+	module.setUsername = setUsername
+	module.getUsername = getUsername
+
+
+return module
+
+
+})(Chatter || {})
 
 
 var Chatter = (function(coreModule) {
@@ -888,7 +888,7 @@ var Chatter = (function(module){
 	var HOST = location.host
 	var PROTOCOL = location.protocol
 	function initSocket(){
-		socket = io(PROTOCOL+'//'+HOST+'/chatter/');
+		socket = io(PROTOCOL+'//'+HOST, {path:'/chatter/socket.io'});
 
 		 // socket = io.connect('http://192.168.0.93:8081');
 				// socket = io.connect('http://66.8.168.178');
