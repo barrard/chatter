@@ -5,7 +5,7 @@ var Chatter = (function(module){
 	var HOST = location.host
 	var PROTOCOL = location.protocol
 	function initSocket(){
-		socket = io(PROTOCOL+'//'+HOST+'/chatter/');
+		socket = io(PROTOCOL+'//'+HOST, {path:'/chatter/socket.io'});
 
 		 // socket = io.connect('http://192.168.0.93:8081');
 				// socket = io.connect('http://66.8.168.178');
