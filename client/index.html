@@ -445,7 +445,7 @@
 		var signOutBtn = $('signOutBtn')
 		signOutBtn.addEventListener('click', signOut, true)
 		function signOut(){
-			GET('/signOut', function(){
+			GET('/chatter/signOut', function(){
 
 			})
 		}
@@ -465,7 +465,7 @@
 			respObj.apikey = apikey
 
 			respObj = JSON.stringify(respObj)
-			POST('/addDomain', respObj, function(resp){
+			POST('/chatter/addDomain', respObj, function(resp){
 				var resp = JSON.parse(resp)
 				var dB = $('addDomainBtn')
 				console.log(resp)
