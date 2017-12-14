@@ -101,7 +101,7 @@ app.get('/chatBuild/:api', function(req, res) {
 	logger.log(req.params.api)
 	logger.log(req.headers)
 	var fileRequested = '';
-	var domainName = req.headers.host
+	var domainName = req.headers['x-forwarded-host']
 	db.find({
 		// registeredIp:ip,
 		domain: domainName,
@@ -132,7 +132,7 @@ app.get('/signOut', function(req, res) {
 	res.send(respObj)
 })
 
-app.post('/chatter/addDomain', function(req, res) {
+app.post('/addDomain', function(req, res) {
 	// var respObj={};
 
 	var body = ''
@@ -151,6 +151,7 @@ app.post('/chatter/addDomain', function(req, res) {
 		logger.log(body)
 
 		body = JSON.parse(body)
+		body.apikey = req.session.apikey
 		logger.log(body)
 
 		logger.log(body.domain)

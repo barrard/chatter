@@ -38,7 +38,7 @@ function connectionToMongoCollection(collectionName, callback){
 		col.find(objToFind).toArray(function(err, items){
 			if(util.handleError(err)){
 				logger.log('found items# '.rainbow+items.length)
-				logger.log('object to find is  '.rainbow+Util.inspect(objToFind))
+				logger.log('object to find is  '.rainbow+Util.inspect(objToFind)+'in the collection '.blue+collection)
 				callback(items)
 				db.close()
 			}
